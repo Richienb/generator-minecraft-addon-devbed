@@ -1,89 +1,86 @@
 {
-  "name": "generator-minecraft-addon",
-  "version": "1.2.0",
-  "description": "Generate minecraft bedrock edition addons",
-  "homepage": "http://github.com/minecraft-scripting-tools/generator-minecraft-addon#readme",
-  "repository": "github:minecraft-scripting-tools/generator-minecraft-addon",
-  "bugs": {
-    "url": "https://github.com/minecraft-addon-tools/generator-minecraft-addon/issues"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Steven Blom",
-    "email": "atomicblom@binaryvibrance.net",
-    "url": "http://github.com/AtomicBlom"
-  },
-  "files": [
-    "generators"
-  ],
-  "main": "generators/index.js",
-  "keywords": [
-    "minecraft",
-    "bedrock",
-    "addon",
-    "add-on",
-    "mcpe",
-    "yeoman-generator"
-  ],
-  "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^3.6.0",
-    "eslint-config-xo": "^0.24.2",
-    "eslint-plugin-prettier": "^2.6.0",
-    "husky": "^0.14.3",
-    "jest": "^23.6.0",
-    "lint-staged": "^7.2.2",
-    "prettier": "^1.17.1",
-    "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.7.0"
-  },
-  "engines": {
-    "npm": ">= 4.0.0"
-  },
-  "dependencies": {
-    "chalk": "^2.4.2",
-    "uuid": "^3.3.2",
-    "yeoman-generator": "^2.0.1",
-    "yosay": "^2.0.1"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
+    "name": "generator-minecraft-addon-devbed",
+    "version": "0.0.0",
+    "main": "generators/index.js",
+    "repository": "https://github.com/Richienb/generator-minecraft-addon-devbed.git",
+    "author": "Richie Bendall <richiebendall@gmail.com>",
+    "license": "MIT",
+    "files": [
+        "generators"
     ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
+    "keywords": [
+        "minecraft",
+        "bedrock",
+        "addon",
+        "add-on",
+        "mcpe",
+        "yeoman-generator"
     ],
-    "env": {
-      "jest": true,
-      "node": true
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint ."
     },
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": false,
-          "printWidth": 160
+    "dependencies": {
+        "chalk": "^2.4.2",
+        "uuid": "^3.3.2",
+        "yeoman-generator": "^4.0.1",
+        "yosay": "^2.0.1"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.0.0",
+        "@typescript-eslint/parser": "^2.0.0",
+        "eslint": "^6.2.0",
+        "eslint-config-google": "^0.13.0",
+        "husky": "^3.0.4",
+        "jest": "^24.9.0",
+        "prettier": "^1.18.2",
+        "typescript": "^3.5.3",
+        "yeoman-assert": "^3.1.0",
+        "yeoman-test": "^2.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "eslint ."
         }
-      ]
     },
-    "plugins": [
-      "prettier"
-    ]
-  },
-  "scripts": {
-    "pretest": "eslint .",
-    "precommit": "lint-staged",
-    "test": "jest"
-  }
+    "engines": {
+        "npm": ">= 4.0.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true,
+            "node": true
+        },
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "extends": [
+            "google"
+        ],
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ],
+            "quotes": [
+                "error",
+                "double"
+            ],
+            "semi": [
+                "error",
+                "never"
+            ],
+            "brace-style": 0,
+            "max-len": 0,
+            "valid-jsdoc": 0,
+            "spaced-comment": 0,
+            "object-curly-spacing": 0,
+            "require-jsdoc": 0
+        }
+    }
 }

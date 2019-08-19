@@ -1,11 +1,13 @@
-var clientSystem = client.registerSystem(0, 0);
+import { DevBed } from "devbed"
+
+const bed = new DevBed(client)
 
 // Setup which events to listen for
-clientSystem.initialize = function () {
-	// set up your listenToEvents and register client-side components here.
-}
+bed.on("initialize", () => {
+    // Setup your listenToEvents and register client-side components here.
+})
 
 // per-tick updates
-clientSystem.update = function () {
-	// Any logic that needs to happen every tick on the client.
-}
+bed.on("update", () => {
+    // Any logic that needs to happen every tick on the client.
+})

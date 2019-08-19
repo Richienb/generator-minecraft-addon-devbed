@@ -1,15 +1,17 @@
 /// <reference types="minecraft-scripting-types-client" />
 
+import { DevBed } from "devbed"
+
 namespace Client {
-	const system = client.registerSystem(0, 0);
+    const bed = new DevBed(client)
 
-	// Setup which events to listen for
-	system.initialize = function() {
-		// set up your listenToEvents and register client-side components here.
-	}
+    // Setup which events to listen for
+    bed.on("initialize", () => {
+        // Setup your listenToEvents and register client-side components here.
+    })
 
-	// per-tick updates
-	system.update = function() {
-		// Any logic that needs to happen every tick on the client.
-	}
+    // per-tick updates
+    bed.on("update", () => {
+        // Any logic that needs to happen every tick on the client.
+    })
 }

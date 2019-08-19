@@ -1,40 +1,32 @@
 /// <reference types="minecraft-scripting-types-server" />
 
+import { DevBed } from "devbed"
+
 namespace Server {
-	var system = server.registerSystem(0, 0);
+    const bed = new DevBed(server)
 
-	// Setup which events to listen for
-	system.initialize = function () {
-		// Register any events you will send to the client
-		// system.registerEventData(...)
+    bed.on("initialize", () => {
+        // Register any events you will send to the client
+        // bed.newEvent(...)
 
-		// Register any components you will attach to game objects
-		// system.registerComponent(...)
+        // Register any components you will attach to game objects
+        // bed.component(...)
 
-		// Set up any events you wish to listen to
-		system.listenForEvent("<%= addonNamespace %>:pinky", receivePinkyMessage);
+        // Set up any events you wish to listen to
+        bed.on("<%= addonNamespace %>:pinky", (eventData) => {
+            if (eventData.data.narf) {
+                // Send chat message
+                bed.chat("The same thing we do every night Client. TRY TO TAKE OVER THE WORLD.")
+            }
+        })
 
-		// Enable full logging, useful for seeing errors, you will probably want to disable this for
-		// release versions of your scripts.
-		// Generally speaking it's not recommended to use broadcastEvent in initialize, but for configuring logging it's fine.
-		const scriptLoggerConfig = system.createEventData(SendToMinecraftServer.ScriptLoggerConfig);
-		scriptLoggerConfig.data.log_errors = true;
-		scriptLoggerConfig.data.log_information = true;
-		scriptLoggerConfig.data.log_warnings = true;
-		system.broadcastEvent(SendToMinecraftServer.ScriptLoggerConfig, scriptLoggerConfig);
-	}
-
-	// per-tick updates
-	system.update = function() {
-		// Any logic that needs to happen every tick on the server.
-	}
-
-	function receivePinkyMessage(parameters: IEventData<{narf: boolean}>) {
-		if (parameters.data.narf) {
-			var displayChatEvent = system.createEventData(SendToMinecraftServer.DisplayChat);
-			displayChatEvent.data.message = "The same thing we do every night Client. TRY TO TAKE OVER THE WORLD.";
-			system.broadcastEvent(SendToMinecraftServer.DisplayChat, displayChatEvent);
-		}
-	}
+        // Enable full logging, useful for seeing errors, you will probably want to disable this for
+        // release versions of your scripts.
+        // Generally speaking it's not recommended to use trigger in initialize, but for configuring logging it's fine.
+        bed.logconfig({
+            error: true,
+            warn: true,
+            info: true
+        })
+    })
 }
-
