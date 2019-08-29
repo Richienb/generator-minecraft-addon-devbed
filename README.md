@@ -1,4 +1,4 @@
-# generator-minecraft-addon-devbed [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+# generator-minecraft-addon-devbed [![Build Status][travis-image]][travis-url]
 
 > Generate minecraft bedrock edition addons with DevBed integration.
 
@@ -26,11 +26,9 @@ yo minecraft-addon-devbed
 
 ## License
 
-MIT © [Steven Blom](http://github.com/AtomicBlom)
+MIT © [Steven Blom](http://github.com/AtomicBlom) and [Richie Bendall](https://github.com/Richienb)
 
 The Default Pack icon was created by Adrian Akison (https://www.akison.com/) and is released under [CC-BY-3.0-AU](https://creativecommons.org/licenses/by/3.0/au/)
 
-[npm-image]: https://badge.fury.io/js/generator-minecraft-addon-devbed.svg
-[npm-url]: https://npmjs.org/package/generator-minecraft-addon-devbed
-[travis-image]: https://travis-ci.com/minecraft-scripting-tools/generator-minecraft-addon-devbed.svg?branch=master
-[travis-url]: https://travis-ci.com/minecraft-scripting-tools/generator-minecraft-addon-devbed
+[travis-image]: https://img.shields.io/travis/com/Richienb/generator-minecraft-addon-devbed/master?style=for-the-badge
+[travis-url]: https://travis-ci.com/Richienb/generator-minecraft-addon-devbed
