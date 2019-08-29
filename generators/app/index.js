@@ -8,7 +8,7 @@ const toolchainVersion = "^1.0.3"
 const toolchainTypeScriptVersion = "^1.0.3"
 const toolchainBrowserifyVersion = "^1.0.3"
 const typescriptTypesVersion = "^1.0.0"
-const DevBedVersion = "^0.9.0"
+const DevBedVersion = "^0.9.1"
 
 module.exports = class extends Generator {
     async prompting() {
