@@ -13,7 +13,7 @@ namespace Server {
         // bed.component(...)
 
         // Set up any events you wish to listen to
-        bed.on("<%= addonNamespace %>:pinky", (eventData) => {
+        bed.on("pinky", (eventData) => {
             if (eventData.data.narf) {
                 // Send chat message
                 bed.chat("The same thing we do every night Client. TRY TO TAKE OVER THE WORLD.")

@@ -8,7 +8,7 @@ namespace Client {
     // Setup which events to listen for
     bed.on("initialize", () => {
         // Register any events you will send to the client
-        bed.newEvent("<%= addonNamespace %>:pinky", { narf: false })
+        // bed.newEvent(...)
 
         // Register any components you will attach to game objects
         // bed.component(...)
@@ -26,15 +26,19 @@ namespace Client {
         })
     })
 
-    // per-tick updates
+    // Per-tick updates
     bed.on("update", () => {
         // Any logic that needs to happen every tick on the client.
-        if (bed.ticks === 1) {
-            // Send chat message
-            bed.chat("What are we going to do tonight Server?")
+    })
 
-            // Trigger custom event
-            bed.trigger("example:pinky", { narf: true })
-        }
+    // First tick updates
+    bed.on("first_tick", () => {
+        // Any logic that needs to happen on the first tick on the client.
+    
+        // Send chat message
+		bed.chat("What are we going to do tonight Server?")
+		    
+		// Trigger custom event
+		bed.trigger("pinky", { narf: true })
     })
 }
