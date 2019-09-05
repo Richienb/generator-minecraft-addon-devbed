@@ -11,7 +11,7 @@ bed.on("initialize", () => {
 
     // Set up any events you wish to listen to
     bed.on("pinky", (eventData) => {
-        if (eventData.data.narf) {
+        if (eventData.narf) {
             // Send chat message
             bed.chat("The same thing we do every night Client. TRY TO TAKE OVER THE WORLD.")
         }
