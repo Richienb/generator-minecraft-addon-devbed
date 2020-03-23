@@ -30,7 +30,7 @@
         "@typescript-eslint/eslint-plugin": "^2.25.0",
         "@typescript-eslint/parser": "^2.25.0",
         "eslint": "^6.8.0",
-        "eslint-config-google": "^0.13.0",
+        "eslint-config-google": "^0.14.0",
         "husky": "^3.0.4",
         "jest": "^24.9.0",
         "prettier": "^1.18.2",
