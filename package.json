@@ -36,7 +36,7 @@
         "prettier": "^1.18.2",
         "typescript": "^3.8.3",
         "yeoman-assert": "^3.1.0",
-        "yeoman-test": "^2.0.0"
+        "yeoman-test": "^2.3.0"
     },
     "husky": {
         "hooks": {
